@@ -5,6 +5,7 @@ C++17 array operations library. Laboratory work 2, variant 25.
 The interface uses a pointer to const int and a std::size_t length.
 Preconditions: the pointer addresses at least n elements and n > 0.
 The mathematical sum and product must fit in int. Inputs are not modified.
+arr_median sorts a copy and returns double, without changing the input array.
 
 ## Build and test
 
