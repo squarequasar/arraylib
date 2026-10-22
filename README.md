@@ -15,6 +15,7 @@ cmake --build build --parallel
 ctest --test-dir build --output-on-failure
 ./build/app
 ./build/app_static
+./build/variant_25
 ```
 
 Windows with a multi-configuration generator: build with --config Release,
@@ -26,3 +27,9 @@ arraylib.dll on Windows. CMake configures the runtime search path on Unix;
 the DLL is generated beside the executables on Windows.
 
 The stages directory contains the single-file and modular source versions.
+
+## Variant 25: substance concentration
+
+Input: 124, 131, 118, 145, 139, 127, 152, 133 (values scaled by 100).
+Output: minimum 1.18, maximum 1.52, average 1.34, median 1.32,
+5 samples strictly above 1.30. The unrounded average is 1.33625.

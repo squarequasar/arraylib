@@ -32,6 +32,9 @@ target_link_libraries(app PRIVATE arraylib)
 add_executable(app_static main.cpp)
 target_link_libraries(app_static PRIVATE arraylib_static)
 
+add_executable(variant_25 examples/variant_25.cpp)
+target_link_libraries(variant_25 PRIVATE arraylib)
+
 include(CTest)
 if(BUILD_TESTING)
     add_executable(test_unit tests/test_unit.cpp)
@@ -47,4 +50,7 @@ if(BUILD_TESTING)
     endforeach()
     add_test(NAME unit COMMAND test_unit)
     add_test(NAME integration COMMAND test_integration)
+    add_test(NAME variant_25 COMMAND variant_25)
+    set_tests_properties(variant_25 PROPERTIES
+        PASS_REGULAR_EXPRESSION "Samples above 1.30: 5")
 endif()
