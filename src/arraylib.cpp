@@ -1,5 +1,16 @@
 #include "arraylib.h"
 
+#include <algorithm>
+#include <vector>
+
+double arr_median(const int* arr, std::size_t n) {
+    std::vector<int> sorted(arr, arr + n);
+    std::sort(sorted.begin(), sorted.end());
+    if (n % 2 != 0) return sorted[n / 2];
+    return (static_cast<double>(sorted[n / 2 - 1])
+            + static_cast<double>(sorted[n / 2])) / 2.0;
+}
+
 int arr_sum(const int* arr, std::size_t n) {
     long long result = 0;
     for (std::size_t i = 0; i < n; ++i) result += arr[i];
